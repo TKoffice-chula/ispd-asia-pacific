@@ -1,0 +1,14 @@
+# Windows / macOS clutter
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+
+# Office lock files
+~$*
+
+# archives and local backups — never publish these
+*.rar
+*.zip
+*-backup/
+_to_delete/
