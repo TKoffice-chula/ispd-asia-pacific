@@ -60,11 +60,9 @@
      global `event` object (which is undefined in Firefox). */
   var tabNav = document.querySelector('.tab-nav');
   if (tabNav) {
-    tabNav.addEventListener('click', function (e) {
-      var btn = e.target.closest('[data-tab]');
-      if (!btn) return;
+    var showTab = function (btn) {
       var panel = document.getElementById('tab-' + btn.getAttribute('data-tab'));
-      if (!panel) return;
+      if (!panel) return false;
       document.querySelectorAll('.tab-panel').forEach(function (p) {
         p.classList.remove('active');
       });
@@ -75,7 +73,27 @@
       panel.classList.add('active');
       btn.classList.add('active');
       btn.setAttribute('aria-selected', 'true');
+      return true;
+    };
+
+    tabNav.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-tab]');
+      if (btn) showTab(btn);
     });
+
+    /* Let another page deep-link straight to a tab, e.g.
+       education.html#tab-videos. Without this the browser jumps to a panel
+       that is still hidden and the visitor lands on an apparently empty page. */
+    var openTabFromHash = function () {
+      var id = (window.location.hash || '').replace(/^#/, '');
+      if (!/^tab-[\w-]+$/.test(id)) return;
+      var btn = tabNav.querySelector('[data-tab="' + id.slice(4) + '"]');
+      if (btn && showTab(btn)) {
+        tabNav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    openTabFromHash();
+    window.addEventListener('hashchange', openTabFromHash);
   }
 
   /* --- Newsletter archive accordions --- */
