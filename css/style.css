@@ -1023,3 +1023,37 @@ textarea:focus-visible {
   background: #C98410;
 }
 .chart-table tr.is-total td { border-bottom: none; color: var(--text-light); }
+
+/* --- What's New (home page) --- */
+.wn-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.wn-item {
+  border-left: 3px solid var(--accent);
+  padding: 2px 0 2px 20px;
+}
+.wn-item h3 {
+  font-size: 1.05rem;
+  margin: 10px 0 8px;
+}
+.wn-item p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+@media (max-width: 900px) {
+  .wn-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* --- pointer line under the Learning Center tabs --- */
+.tab-note {
+  margin: -8px 0 28px;
+  padding: 12px 16px;
+  background: var(--bg-light);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
