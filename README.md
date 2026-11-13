@@ -15,12 +15,12 @@ about.html          About the chapter, mission, PD uptake figure
 activities.html     Activities & events
 support.html        Support & grants
 newsletter.html     Newsletter archive  → files/newsletter/*.pdf
-education.html      Learning Center, guidelines  → files/guidelines/*.pdf
+education.html      Learning Center; guidelines link to ispd.org
 membership.html     Membership benefits + application form
 css/style.css       The single stylesheet
 js/main.js          Mobile menu, tabs, accordions, video posters
 images/             Photos, maps, card icons (images/icons/)
-files/              PDFs: newsletters and ISPD guidelines
+files/              PDFs: newsletters
 ```
 
 ## Updating the site

@@ -1090,3 +1090,6 @@ iframe.gform { display: block; width: 100%; height: 1650px; border: 0; }
 .ref-note { display: block; font-size: 0.85rem; color: var(--text-muted); }
 .guide-list .ref-note { padding: 0 0 12px 30px; margin-top: -6px; }
 .guide-sub { margin-top: 40px; padding-bottom: 6px; border-bottom: 2px solid var(--accent); display: inline-block; }
+.guide-list .ref-note a { display: inline; padding: 0; font-size: inherit; color: var(--secondary); }
+.guide-list .ref-note a::before { content: none; }
+.guide-list .ref-note a:hover { padding-left: 0; text-decoration: underline; }
